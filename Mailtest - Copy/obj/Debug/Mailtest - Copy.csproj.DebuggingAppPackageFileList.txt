@@ -1,2 +1,2 @@
 bin\Debug\OfficeAppManifests\Mailtest - Copy.xml
-C:\Users\mschray\Documents\Visual Studio 2013\Projects\Mailtest - Copy\Mailtest - Copy\bin\Debug\Mailtest - Copy.debugapp
+C:\code\OfficeToList\Mailtest - Copy\bin\Debug\Mailtest - Copy.debugapp

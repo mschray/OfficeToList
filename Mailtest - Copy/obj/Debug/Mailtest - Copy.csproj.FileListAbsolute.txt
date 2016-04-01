@@ -1,1 +1,2 @@
 C:\Users\mschray\Documents\Visual Studio 2013\Projects\Mailtest - Copy\Mailtest - Copy\obj\Debug\Mailtest - Copy.csprojResolveAssemblyReference.cache
+C:\code\OfficeToList\Mailtest - Copy\obj\Debug\Mailtest - Copy.csprojResolveAssemblyReference.cache

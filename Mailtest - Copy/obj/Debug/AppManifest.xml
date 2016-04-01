@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="Mailtest - Copy"
-     ProductID="{99b26c0f-3cc0-4f9b-95b1-2f46ba2ac090}"
+     ProductID="{770bcdc3-2ff5-4dcc-91f3-f3b508f7359c}"
      Version="1.0.0.0"
      SharePointMinVersion="15.0.0.0"
 >

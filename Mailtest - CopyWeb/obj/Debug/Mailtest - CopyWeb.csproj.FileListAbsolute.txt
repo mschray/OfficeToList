@@ -4,3 +4,9 @@ C:\Users\mschray\Documents\Visual Studio 2013\Projects\Mailtest - Copy\Mailtest 
 C:\Users\mschray\Documents\Visual Studio 2013\Projects\Mailtest - Copy\Mailtest - CopyWeb\obj\Debug\Mailtest - CopyWeb.csprojResolveAssemblyReference.cache
 C:\Users\mschray\Documents\Visual Studio 2013\Projects\Mailtest - Copy\Mailtest - CopyWeb\obj\Debug\Mailtest - CopyWeb.dll
 C:\Users\mschray\Documents\Visual Studio 2013\Projects\Mailtest - Copy\Mailtest - CopyWeb\obj\Debug\Mailtest - CopyWeb.pdb
+C:\code\OfficeToList\Mailtest - CopyWeb\bin\Mailtest - CopyWeb.dll.config
+C:\code\OfficeToList\Mailtest - CopyWeb\bin\Mailtest - CopyWeb.dll
+C:\code\OfficeToList\Mailtest - CopyWeb\bin\Mailtest - CopyWeb.pdb
+C:\code\OfficeToList\Mailtest - CopyWeb\obj\Debug\Mailtest - CopyWeb.csprojResolveAssemblyReference.cache
+C:\code\OfficeToList\Mailtest - CopyWeb\obj\Debug\Mailtest - CopyWeb.dll
+C:\code\OfficeToList\Mailtest - CopyWeb\obj\Debug\Mailtest - CopyWeb.pdb

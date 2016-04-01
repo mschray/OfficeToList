@@ -2,7 +2,9 @@
 Office.initialize = function (reason) {
     $(document).ready(function () {
 
-        $('#add-recipients').submit(prependNames());
+        $("#display-list").selectable();
+
+        $("button:first" ).click(prependN);
 
         addToRecipients();
 
@@ -31,20 +33,23 @@ var reciptList = function (data) {
     
     for (var i = 0; i < data.value.length; i++) {
         console.log("Display Name: " + data.value[i].displayName);
-        list = data.value[i].displayName + "<br>";
+
+        //<li class="ui-widget-content">Item 1</li>
+        list = "<li class=\"ui-widget-content\">" + data.value[i].displayName + "</li>";
+        $("#display-list").append(list);
     }
 
     //$('#list-recipients').text("etst");
-    $("#display-list").append(list);
-    var item = Office.context.mailbox.item;
+
+    
     //item.body.getAsync(getBody);
     
 }
 
-function prependNames() {
+var prependN = function prependNames() {
     console.log("prependNames() called");
-
-    item.body.prependAsync(list);
+    var item = Office.context.mailbox.item;
+    item.body.prependAsync(list+"\n");
 
 }
 

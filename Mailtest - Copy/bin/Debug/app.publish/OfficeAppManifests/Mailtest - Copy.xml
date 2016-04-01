@@ -6,7 +6,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>SchraySoft</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="PickReplyName" />
+  <DisplayName DefaultValue="Pick Reply Name" />
   <Description DefaultValue="My description" />
   <Hosts>
     <Host Name="Mailbox" />

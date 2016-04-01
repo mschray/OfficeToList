@@ -2,6 +2,8 @@
 Office.initialize = function (reason) {
     $(document).ready(function () {
 
+        $("#display-list").selectable();
+
         $("button:first" ).click(prependN);
 
         addToRecipients();
@@ -33,7 +35,8 @@ var reciptList = function (data) {
         console.log("Display Name: " + data.value[i].displayName);
 
         //<li class="ui-widget-content">Item 1</li>
-        list = "<li class=\"ui-widget-content\">" + data.value[i].displayName + "</li>";
+        //list = "<li class=\"ui-widget-content\">" + data.value[i].displayName + "</li>";
+        list = "<input type='checkbox' name='displayName' value=' " + data.value[i].displayName + "' >" + data.value[i].displayName+"<br>";
         $("#display-list").append(list);
     }
 
@@ -66,8 +69,9 @@ function addToRecipients() {
         } catch (msg) {
             console.log("Martin pluggin " + msg);
         }
-        Office.cast.item.toMessageCompose(item).to.addAsync([addressToAdd]);
+
+        //Office.cast.item.toMessageCompose(item).to.addAsync([addressToAdd]);
     } else if (item.itemType === Office.MailboxEnums.ItemType.Appointment) {
-        Office.cast.item.toAppointmentCompose(item).requiredAttendees.addAsync([addressToAdd]);
+        //Office.cast.item.toAppointmentCompose(item).requiredAttendees.addAsync([addressToAdd]);
     }
 }
