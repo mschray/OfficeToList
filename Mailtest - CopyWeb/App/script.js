@@ -56,10 +56,12 @@ var prependN = function prependNames() {
 
 function addToRecipients() {
     var item = Office.context.mailbox.item;
-    var addressToAdd = {
-        displayName: Office.context.mailbox.userProfile.displayName,
-        emailAddress: Office.context.mailbox.userProfile.emailAddress
-    };
+
+    // I don't need address to add since I am not inject myself into the to line anymore.  No need the reply or new mail adds me already.
+    //var addressToAdd = {
+    //    displayName: Office.context.mailbox.userProfile.displayName,
+    //    emailAddress: Office.context.mailbox.userProfile.emailAddress
+    //};
 
     if (item.itemType === Office.MailboxEnums.ItemType.Message) {
         try {
