@@ -5,5 +5,13 @@
     <OfficeAppStartAction>
     </OfficeAppStartAction>
   </PropertyGroup>
-  <ProjectExtensions />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{C1CDDADD-2546-481F-9697-4EA41081F2FC}">
+        <ProjectStore>
+          <EmailAddressForExchangeDeploymentSettings>mschray@microsoft.com</EmailAddressForExchangeDeploymentSettings>
+        </ProjectStore>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

@@ -2,11 +2,11 @@
 Office.initialize = function (reason) {
     $(document).ready(function () {
 
-        $("#display-list").selectable();
+        $("button:first" ).click(prependNames);
 
-        $("button:first" ).click(prependN);
 
-        addToRecipients();
+
+        addToLineRecipients();
 
     });
 };
@@ -47,14 +47,36 @@ var reciptList = function (data) {
     
 }
 
-var prependN = function prependNames() {
+var prependNames = function prependNames() {
     console.log("prependNames() called");
     var item = Office.context.mailbox.item;
-    item.body.prependAsync(list+"\n");
+
+    var selectedName = [];
+
+    //var displayChecked = function () {
+
+    //    var listOfControls = [];
+
+    //    $("input:checked").each(function () {
+    //        listOfControls.push($(this)[0].value);
+    //    })
+
+    //    $("#list").text(listOfControls.join(" ,"))
+
+    //};
+
+    $("input:checked").each(function () {
+        var that = $(this);
+        console.log("This is the checklist item :" + that[0].checked);
+        console.log("This is the checklist item :" + that[0].value);
+        selectedName.push($(this)[0].value);
+    });
+
+    item.body.prependAsync(selectedName.join(", ")+"\n");
 
 }
 
-function addToRecipients() {
+function addToLineRecipients() {
     var item = Office.context.mailbox.item;
 
     // I don't need address to add since I am not inject myself into the to line anymore.  No need the reply or new mail adds me already.
@@ -63,6 +85,7 @@ function addToRecipients() {
     //    emailAddress: Office.context.mailbox.userProfile.emailAddress
     //};
 
+    // Make sure it a message item and if so add the list of recipants on the to line
     if (item.itemType === Office.MailboxEnums.ItemType.Message) {
         try {
             //var list = item.Entities.contacts();
