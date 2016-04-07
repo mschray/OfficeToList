@@ -51,28 +51,44 @@ var prependNames = function prependNames() {
     console.log("prependNames() called");
     var item = Office.context.mailbox.item;
 
+    // hold the list of name in the this array
     var selectedName = [];
-
-    //var displayChecked = function () {
-
-    //    var listOfControls = [];
-
-    //    $("input:checked").each(function () {
-    //        listOfControls.push($(this)[0].value);
-    //    })
-
-    //    $("#list").text(listOfControls.join(" ,"))
-
-    //};
-
+        
     $("input:checked").each(function () {
         var that = $(this);
         console.log("This is the checklist item :" + that[0].checked);
         console.log("This is the checklist item :" + that[0].value);
-        selectedName.push($(this)[0].value);
+
+        // get the first name
+        var fullName = that[0].value;
+        // I figure the name will have space
+        var locationOfLastSpace = fullName.lastIndexOf(' ');
+
+        selectedName.push(fullName.slice(0,locationOfLastSpace));
     });
 
-    item.body.prependAsync(selectedName.join(", ")+"\n");
+    // format the name
+    var formattedNameStr ='';
+
+    // its only one name selected
+    if (selectedName.length == 1) {
+        item.body.prependAsync(selectedName.join("") + ",\n");
+    } else if (selectedName.length == 2) { // two names selected
+        item.body.prependAsync(selectedName[0] + ' and ' + selectedName[1] + ",\n");
+    } else if (selectedName.length > 2) {  // more that two names selected 
+
+        for (var i = 0; i < selectedName.length - 1; i++) {
+            formattedNameStr += selectedName[i];
+            if (i < selectedName.length - 2) {
+                formattedNameStr += ", ";
+            }
+        }
+
+        formattedNameStr += ' and ' + selectedName[selectedName.length-1] +',';
+
+        item.body.prependAsync(formattedNameStr + "\n");
+    
+    }
 
 }
 
