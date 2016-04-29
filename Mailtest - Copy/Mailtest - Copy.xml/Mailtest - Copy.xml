@@ -6,7 +6,7 @@
   <ProviderName>SchraySoft</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Pick Reply Name" />
-  <Description DefaultValue="My description" />
+  <Description DefaultValue="This application allows you to get a list of the people on the to line of the email and decide which names into include in your reply. " />
   <Hosts>
     <Host Name="Mailbox" />
   </Hosts>
@@ -18,13 +18,13 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="~remoteAppUrl/App/index.html" />
+        <SourceLocation DefaultValue="https://replaynameslector.azurewebsites.net/App/index.html" />
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="~remoteAppUrl/App/index.html" />
+        <SourceLocation DefaultValue="https://replaynameslector.azurewebsites.net/App/index.html" />
       </DesktopSettings>
     </Form>
   </FormSettings>

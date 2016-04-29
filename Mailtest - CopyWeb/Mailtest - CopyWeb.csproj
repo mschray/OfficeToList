@@ -67,7 +67,9 @@
     <Content Include="App\styles.css" />
     <Content Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\ReplayNameSlector - Web Deploy.pubxml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

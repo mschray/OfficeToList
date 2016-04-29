@@ -4,8 +4,6 @@ Office.initialize = function (reason) {
 
         $("button:first" ).click(prependNames);
 
-
-
         addToLineRecipients();
 
     });
@@ -34,17 +32,23 @@ var reciptList = function (data) {
     for (var i = 0; i < data.value.length; i++) {
         console.log("Display Name: " + data.value[i].displayName);
 
+        //todo
+        // people with only first name (leslie
+        // people with middle initial (shaun S. Sharma)
+
+        // some email address are wrapped in single quoutes (e.g. 'Brad Becker') which is causing messing up the formatting in the html when added to the page
+        // this code is meant to address this, but should be encoding it instead?
+        var displayName = data.value[i].displayName;
+        if (data.value[i].displayName.indexOf("'") >= 0) {
+            // do a global replace on string
+            displayName = data.value[i].displayName.replace(/'/g, "");
+        }
+        
         //<li class="ui-widget-content">Item 1</li>
         //list = "<li class=\"ui-widget-content\">" + data.value[i].displayName + "</li>";
-        list = "<input type='checkbox' name='displayName' value=' " + data.value[i].displayName + "' >" + data.value[i].displayName+"<br>";
+        list = "<input type='checkbox' name='displayName' value=' " + displayName + "' >" + displayName+"<br>";
         $("#display-list").append(list);
     }
-
-    //$('#list-recipients').text("etst");
-
-    
-    //item.body.getAsync(getBody);
-    
 }
 
 var prependNames = function prependNames() {
@@ -59,9 +63,38 @@ var prependNames = function prependNames() {
         console.log("This is the checklist item :" + that[0].checked);
         console.log("This is the checklist item :" + that[0].value);
 
-        // get the first name
+        // variable for the full name
         var fullName = that[0].value;
-        // I figure the name will have space
+        
+        // remove the (blah blah in name like MS vendors)
+        // for example Andrew Baker (Piraeus Data LLC) <v-andbak@microsoft.com>
+        // if it ends with a ) than do this
+        // or 
+        // had another example where the maden name was used in the middle of the display name
+        // Shuhan (Bali) Majid <smajid@microsoft.com>
+
+     /*   if (fullName[fullName.length - 1] == ')') {
+            var startParen = fullName.lastIndexOf('(');
+            if (startParen > 0) {
+                fullName = fullName.slice(0, startParen);
+                console.log("Remove of paren :" + fullName);
+                fullName = fullName.trim();
+                console.log(" of paren :" + fullName);
+            }
+
+        // had another example where the maden name was used in the middle of the display name
+        // Shuhan (Bali) Majid <smajid@microsoft.com>
+        } else */ 
+        if (fullName.lastIndexOf('(')) {
+            var startParen = fullName.lastIndexOf('(');
+            var endParen = fullName.lastIndexOf(')');
+
+            fullName = fullName.substring(1, startParen - 1) + fullName.substring(endParen, fullName.length - 1);
+            fullName = fullName.trim();
+        }
+
+        // get the first name
+        // I figure the name will have space between first and land name
         var locationOfLastSpace = fullName.lastIndexOf(' ');
 
         selectedName.push(fullName.slice(0,locationOfLastSpace));
